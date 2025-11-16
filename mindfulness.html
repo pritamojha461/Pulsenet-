@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindfulness – PulseNet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <h1>PulseNet</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="moodcheck.html">Mood Check</a></li>
+                <li><a style="color:var(--primary-color);" href="mindfulness.html">Mindfulness</a></li>
+                <li><a href="circles.html">Support Circles</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero -->
+        <section class="hero">
+            <h2>Mindfulness & Self-Care Space</h2>
+            <p>
+                Slow down. Breathe. Let your mind reset.  
+                Choose an exercise below to restore calm and clarity.
+            </p>
+        </section>
+
+        <!-- Main Mindfulness Module Section -->
+        <section class="mindfulness">
+            <h2>Mindfulness Exercises</h2>
+
+            <div class="modules">
+
+                <div class="module-card">
+                    <h3>Breathing Rhythm</h3>
+                    <p>3-minute inhale–exhale guided session.</p>
+                    <button onclick="openExercise('breathing')">Start</button>
+                </div>
+
+                <div class="module-card">
+                    <h3>10-Min Meditation</h3>
+                    <p>A calm voice guiding you into mental stillness.</p>
+                    <button onclick="openExercise('meditation')">Start</button>
+                </div>
+
+                <div class="module-card">
+                    <h3>Body Scan Relaxation</h3>
+                    <p>Release tension from head to toe.</p>
+                    <button onclick="openExercise('body')">Start</button>
+                </div>
+
+                <div class="module-card">
+                    <h3>Focus Reset</h3>
+                    <p>Short 2-minute grounding technique.</p>
+                    <button onclick="openExercise('focus')">Start</button>
+                </div>
+
+                <div class="module-card">
+                    <h3>Sleep Wind-Down</h3>
+                    <p>Soft audio & breathing to support sleep.</p>
+                    <button onclick="openExercise('sleep')">Start</button>
+                </div>
+
+                <div class="module-card">
+                    <h3>Affirmations</h3>
+                    <p>Positive phrases to uplift your mindset.</p>
+                    <button onclick="openExercise('affirmations')">Start</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function openExercise(type) {
+            alert("Loading " + type + " session...");
+            // Later you can redirect to:
+            // window.location.href = "exercise.php?type=" + type;
+        }
+    </script>
+
+</body>
+</html>

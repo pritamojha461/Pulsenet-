@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PulseNet — Login</title>
+
+<style>
+/* ========= GLOBAL STYLES ========= */
+body{
+  margin:0;
+  font-family:Inter, Arial, sans-serif;
+  background:linear-gradient(135deg,#ece9ff,#f7f7ff);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  color:#333;
+}
+
+.login-container{
+  width:100%;
+  max-width:420px;
+  background:#fff;
+  padding:30px;
+  border-radius:14px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.08);
+  animation:fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(10px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+h1{
+  text-align:center;
+  margin:0;
+  font-size:26px;
+  font-weight:900;
+  background:linear-gradient(90deg,#6366f1,#ec4899);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+p{
+  text-align:center;
+  color:#666;
+  margin-top:4px;
+}
+
+.social-btn{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #e5e7eb;
+  background:#fff;
+  font-weight:600;
+  cursor:pointer;
+  margin-top:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  transition:0.2s;
+}
+
+.social-btn:hover{
+  background:#f8f9ff;
+}
+
+.google-icon{
+  width:20px;
+  height:20px;
+}
+
+.fb-icon{
+  width:22px;
+  height:22px;
+}
+
+.divider{
+  margin:18px 0;
+  text-align:center;
+  color:#777;
+  font-size:14px;
+  position:relative;
+}
+
+.divider:before,
+.divider:after{
+  content:"";
+  position:absolute;
+  top:50%;
+  width:40%;
+  height:1px;
+  background:#ddd;
+}
+
+.divider:before{ left:0; }
+.divider:after{ right:0; }
+
+label{
+  font-weight:700;
+  display:block;
+  margin-top:8px;
+  margin-bottom:6px;
+}
+
+input{
+  width:100%;
+  padding:12px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  font-size:15px;
+  outline:none;
+  transition:0.2s;
+  background:#fafafa;
+}
+
+input:focus{
+  border-color:#6366f1;
+  background:#fff;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  margin-top:18px;
+  background:linear-gradient(90deg,#6366f1,#ec4899);
+  border:none;
+  color:#fff;
+  border-radius:10px;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+button:hover{
+  opacity:0.9;
+}
+
+.small-text{
+  margin-top:14px;
+  text-align:center;
+  font-size:14px;
+}
+
+.small-text a{
+  color:#6366f1;
+  text-decoration:none;
+}
+
+.small-text a:hover{
+  text-decoration:underline;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="login-container">
+  <h1>PulseNet</h1>
+  <p>Welcome back! Log in to continue.</p>
+
+  <button class="social-btn">
+    <img class="google-icon" src="google.png" alt=""> Continue with Google
+  </button>
+
+  <button class="social-btn">
+    <img class="fb-icon" src="facebook.png" alt=""> Continue with Facebook
+  </button>
+
+  <div class="divider">or</div>
+
+  <form>
+    <label>Email</label>
+    <input type="email" placeholder="Enter your email">
+
+    <label>Password</label>
+    <input type="password" placeholder="Enter your password">
+
+    <button type="submit">Login</button>
+  </form>
+
+  <div class="small-text">
+    Don’t have an account? <a href="#">Sign Up</a>
+  </div>
+</div>
+
+</body>
+</html>

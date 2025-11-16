@@ -1,0 +1,329 @@
+/* ----------------------------------------------------------
+   RESET & GLOBAL
+---------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #ec4899;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+
+    --bg-light: #f9fafb;
+    --bg-dark: #1f2937;
+
+    --text-light: #374151;
+    --text-dark: #f3f4f6;
+
+    --border-color: #e5e7eb;
+
+    --card-glass: rgba(255, 255, 255, 0.7);
+    --card-dark: rgba(31, 41, 55, 0.7);
+
+    --accent: #a78bfa;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ede9fe 0%, #faf5ff 100%);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: 0.3s ease;
+}
+
+body.dark-mode {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ----------------------------------------------------------
+   NAVIGATION BAR
+---------------------------------------------------------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: var(--card-glass);
+    padding: 20px 35px;
+
+    border-radius: 20px;
+    margin-bottom: 50px;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    position: sticky;
+    top: 20px;
+    z-index: 100;
+
+    animation: slideDown 0.6s ease;
+}
+
+.dark-mode .navbar {
+    background: var(--card-dark);
+    border-color: #4b5563;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar h1 {
+    font-size: 32px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--text-light);
+    padding: 8px 0;
+    position: relative;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--primary-color);
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 2px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    transition: 0.4s;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* ----------------------------------------------------------
+   HERO SECTION
+---------------------------------------------------------- */
+.hero {
+    text-align: center;
+    padding: 70px 30px;
+    background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(236,72,153,0.12));
+    border-radius: 20px;
+
+    margin-bottom: 70px;
+    animation: fadeInUp 1s ease;
+}
+
+.hero h2 {
+    font-size: 50px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+    color: #6b7280;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.dark-mode .hero p {
+    color: #d1d5db;
+}
+
+@keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* ----------------------------------------------------------
+   MOOD DETECTOR
+---------------------------------------------------------- */
+.mood-detector {
+    background: var(--card-glass);
+    padding: 50px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    margin-bottom: 60px;
+
+    border: 1px solid rgba(255,255,255,0.3);
+    animation: fadeInUp 1s ease;
+}
+
+.dark-mode .mood-detector {
+    background: var(--card-dark);
+    border-color: #4b5563;
+}
+
+.mood-detector h2 {
+    font-size: 38px;
+    margin-bottom: 35px;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.mood-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 25px;
+}
+
+.mood-btn {
+    padding: 18px;
+    border-radius: 16px;
+    border: 2px solid var(--border-color);
+    background: white;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+
+    transition: 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.mood-btn:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(99,102,241,0.35);
+    color: white;
+    border-color: transparent;
+}
+
+.mood-btn:hover::before {
+    left: 0;
+}
+
+.mood-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    transition: 0.4s;
+    z-index: -1;
+}
+
+#mood-result {
+    margin-top: 25px;
+    padding: 18px;
+    border-radius: 14px;
+    font-size: 18px;
+    background: linear-gradient(135deg, var(--success-color), #0ea472);
+    color: white;
+    display: none;
+}
+
+/* ----------------------------------------------------------
+   MINDFULNESS CARDS
+---------------------------------------------------------- */
+.module-card,
+.circle-card {
+    background: var(--card-glass);
+    padding: 30px;
+
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255,255,255,0.35);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+
+    transition: 0.4s ease;
+    position: relative;
+}
+
+.module-card:hover,
+.circle-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 55px rgba(99,102,241,0.3);
+    border-color: var(--primary-color);
+}
+
+.module-card h3,
+.circle-card h3 {
+    color: var(--primary-color);
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.module-card button,
+.circle-card button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 14px;
+
+    border: none;
+    border-radius: 12px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.module-card button:hover,
+.circle-card button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(99,102,241,0.35);
+}
+
+/* ----------------------------------------------------------
+   BETTER RESPONSIVENESS
+---------------------------------------------------------- */
+@media (max-width: 768px) {
+    .navbar h1 {
+        font-size: 26px;
+    }
+    .hero h2 {
+        font-size: 35px;
+    }
+    .mood-detector h2 {
+        font-size: 30px;
+    }
+}

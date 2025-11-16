@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PulseNet — Mental Resilience Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <h1>PulseNet</h1>
+            <ul>
+                <li><a href="moodcheck.html">Mood Check</a></li>
+                <li><a href="mindfulness.html">Mindfulness</a></li>
+                <li><a href="support circles.html">Support Circles</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mood Detection Section -->
+        <section id="mood" class="mood-detector">
+            <h2>How are you feeling today?</h2>
+            <div class="mood-buttons">
+                <button class="mood-btn" data-mood="happy">😊 Happy</button>
+                <button class="mood-btn" data-mood="sad">😢 Sad</button>
+                <button class="mood-btn" data-mood="anxious">😰 Anxious</button>
+                <button class="mood-btn" data-mood="calm">😌 Calm</button>
+                <button class="mood-btn" data-mood="stressed">😤 Stressed</button>
+            </div>
+            <div id="mood-result"></div>
+        </section>
+
+        <!-- Mindfulness Modules -->
+        <section id="mindfulness" class="mindfulness">
+            <h2>Mindfulness Exercises</h2>
+            <div class="modules">
+                <div class="module-card">
+                    <h3>Breathing Exercise</h3>
+                    <p>5-minute guided breathing</p>
+                    <button onclick="startExercise('breathing')">Start</button>
+                </div>
+                <div class="module-card">
+                    <h3>Meditation</h3>
+                    <p>10-minute guided meditation</p>
+                    <button onclick="startExercise('meditation')">Start</button>
+                </div>
+                <div class="module-card">
+                    <h3>Sleep Aid</h3>
+                    <p>Relaxing sleep guidance</p>
+                    <button onclick="startExercise('sleep')">Start</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Circles -->
+        <section id="circles" class="support-circles">
+            <h2>Virtual Support Circles</h2>
+            <div class="circles-list">
+                <div class="circle-card">
+                    <h3>Anxiety Support Group</h3>
+                    <p>12 members • Active now</p>
+                    <button onclick="joinCircle('anxiety')">Join Circle</button>
+                </div>
+                <div class="circle-card">
+                    <h3>Mindfulness Community</h3>
+                    <p>45 members • Peak hour 8 PM</p>
+                    <button onclick="joinCircle('mindfulness')">Join Circle</button>
+                </div>
+                <div class="circle-card">
+                    <h3>Sleep & Wellness</h3>
+                    <p>28 members • Active now</p>
+                    <button onclick="joinCircle('sleep')">Join Circle</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

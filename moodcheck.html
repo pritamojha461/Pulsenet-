@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Check — PulseNet</title>
+    <link rel="stylesheet" href="mood.css">
+</head>
+<body>
+
+<div class="container mood-page">
+
+    <h2 class="page-title">Mood Check</h2>
+    <p class="subtitle">Tell us about your emotions and thoughts...</p>
+
+    <!-- Mood Selection -->
+    <div class="mood-select">
+        <label>Select your current mood:</label>
+        <select id="mood">
+            <option value="">Choose mood</option>
+            <option value="Happy">😊 Happy</option>
+            <option value="Sad">😢 Sad</option>
+            <option value="Anxious">😰 Anxious</option>
+            <option value="Calm">😌 Calm</option>
+            <option value="Stressed">😤 Stressed</option>
+        </select>
+    </div>
+
+    <!-- Thoughts Input -->
+    <div class="thought-box">
+        <label>What's on your mind?</label>
+        <textarea id="thoughts" rows="5" placeholder="Write your thoughts here..."></textarea>
+    </div>
+
+    <button class="submit-btn" onclick="submitMood()">Submit Mood</button>
+
+    <p id="response" class="response-msg"></p>
+
+</div>
+
+<script > // SUBMIT MOOD FUNCTION
+function submitMood() {
+    let mood = document.getElementById("mood").value;
+    let thoughts = document.getElementById("thoughts").value;
+    let response = document.getElementById("response");
+
+    if (mood === "" || thoughts.trim() === "") {
+        response.style.color = "red";
+        response.textContent = "Please select your mood and write something.";
+        return;
+    }
+
+    let formData = new FormData();
+    formData.append("mood", mood);
+    formData.append("thoughts", thoughts);
+
+    fetch("save_mood.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.text())
+    .then(data => {
+        response.style.color = "green";
+        response.textContent = data;
+        document.getElementById("thoughts").value = "";
+        document.getElementById("mood").value = "";
+    })
+    .catch(err => {
+        response.style.color = "red";
+        response.textContent = "Error saving mood.";
+    });
+}
+</script>
+</body>
+</html>

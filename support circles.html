@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Circles – PulseNet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <h1>PulseNet</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="moodcheck.html">Mood Check</a></li>
+                <li><a href="mindfulness.html">Mindfulness</a></li>
+                <li><a style="color:var(--primary-color);" href="support-circles.html">Support Circles</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2>Virtual Support Circles</h2>
+            <p>
+                Safe Indian community spaces where people talk, heal, and grow together.  
+                Join a circle that matches your emotional needs.
+            </p>
+        </section>
+
+        <!-- Support Circles -->
+        <section class="support-circles">
+            <h2>Active Support Groups</h2>
+
+            <div class="circles-list">
+
+                <!-- Group 1 -->
+                <div class="circle-card">
+                    <h3>Anxiety & Stress Group (India)</h3>
+                    <p>Members: 54 • Active now • Moderated by <b>Riya Sharma</b> (Delhi)</p>
+                    <button onclick="joinCircle('anxiety')">Join Circle</button>
+                </div>
+
+                <!-- Group 2 -->
+                <div class="circle-card">
+                    <h3>Students Mental Wellness Circle</h3>
+                    <p>Members: 102 • Daily peak: 8 PM • Mentor: <b>Rahul Verma</b> (Mumbai)</p>
+                    <button onclick="joinCircle('students')">Join Circle</button>
+                </div>
+
+                <!-- Group 3 -->
+                <div class="circle-card">
+                    <h3>Sleep & Relaxation Community</h3>
+                    <p>Members: 37 • Active now • Guided by <b>Dr. Meena Iyer</b> (Chennai)</p>
+                    <button onclick="joinCircle('sleep')">Join Circle</button>
+                </div>
+
+                <!-- Group 4 -->
+                <div class="circle-card">
+                    <h3>Working Professionals Support Hub</h3>
+                    <p>Members: 89 • Peak: 9 PM • Coach: <b>Amit Singh</b> (Bangalore)</p>
+                    <button onclick="joinCircle('work')">Join Circle</button>
+                </div>
+
+                <!-- Group 5 -->
+                <div class="circle-card">
+                    <h3>Women Emotional Wellness Forum</h3>
+                    <p>Members: 63 • Safe space • Led by <b>Pooja Nair</b> (Kerala)</p>
+                    <button onclick="joinCircle('women')">Join Circle</button>
+                </div>
+
+                <!-- Group 6 -->
+                <div class="circle-card">
+                    <h3>Teens Talk & Healing Space</h3>
+                    <p>Members: 45 • Evenings only • Moderated by <b>Karan Patel</b> (Hyderabad)</p>
+                    <button onclick="joinCircle('teens')">Join Circle</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="mindfulness">
+            <h2>Our Support Team (India)</h2>
+
+            <div class="modules">
+
+                <div class="module-card">
+                    <h3>Riya Sharma</h3>
+                    <p>Psychology Graduate • Delhi<br>Handles: Anxiety & Emotional Support</p>
+                </div>
+
+                <div class="module-card">
+                    <h3>Rahul Verma</h3>
+                    <p>Student Counselor • Mumbai<br>Handles: Exam Stress & Career Worries</p>
+                </div>
+
+                <div class="module-card">
+                    <h3>Dr. Meena Iyer</h3>
+                    <p>Sleep Specialist • Chennai<br>Handles: Sleep Disorders & Insomnia</p>
+                </div>
+
+                <div class="module-card">
+                    <h3>Amit Singh</h3>
+                    <p>Corporate Wellness Coach • Bangalore<br>Handles: Work Stress & Burnout</p>
+                </div>
+
+                <div class="module-card">
+                    <h3>Pooja Nair</h3>
+                    <p>Women’s Mental Health Expert • Kerala<br>Handles: Emotional Healing</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function joinCircle(circle) {
+            alert("Joining " + circle + " support group...");
+            // Later redirect to PHP:
+            // window.location.href = "joincircle.php?c=" + circle;
+        }
+    </script>
+
+</body>
+</html>
